@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" href="design.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <title></title>
+    
+    
+</head>
+<body>
+
+      <div class="container-fluid py-5 bg-dark text-center">
+        <div class="display-3 mb-4 py-3 text-light"><h1>ORDER DESCRIPTION</h1></div>
+        
+        <!-- STATUS CARDS -->
+        <div class="row g-3 bg-dark">
+          <!-- COMPLETE CARD -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card bg-success text-light text-center">
+              <div class="card-header fs-4">Orders</div>
+              <div class="d-flex align-items-center justify-content-around py-1">
+                <i class="bi bi-check-square fs-1 text-light"></i>
+                <h2 class="fw-bold fs-1">3</h2>
+              </div>
+              
+            </div>
+           
+            <div style="margin-top: 28%;">
+            <img src="\pictures\coffee.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+        </div>
+        <div class="text-white">coffee</div>
+        <div style="margin-top: 28%;">
+            <img src="\pictures\nachos.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+           
+        </div>
+
+        <div class="text-white">nachos</div>
+
+       
+          </div>
+
+          <!-- ON PROCESS CARD -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center text-light bg-warning">
+              <div class="card-header fs-4">Preparing</div>
+              <div class="d-flex align-items-center justify-content-around py-1 border border-1 border-warning">
+                <i class="bi bi-pencil-square fs-1 text-light"></i>
+                <h2 class="fw-bold fs-1">5</h2>
+              </div>
+              
+            </div>
+            <div class="container-fluid text-white py-5 bg-dark text-center">
+                <h1>DRINKS</h1>
+              </div>
+            <div>
+                <img  src="\pictures\coke.jpg" style="width: 300px; height: 200px;"  alt="Description">
+            </div>
+            <div class="text-white">coke</div>
+            <div class="container-fluid text-white py-5 bg-dark text-center">
+                <h1>FOODS</h1>
+              </div>
+            <div style="margin-top: 3%;">
+                <img  src="\pictures\fries.jpg" style="width: 300px; height: 200px;"  alt="Description">
+            </div>
+            <div class="text-white">fries</div>
+          </div>
+
+          <!-- ON QUEUE CARD -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card bg-secondary text-light text-center">
+              <div class="card-header fs-4">Served</div>
+              <div class="d-flex align-items-center justify-content-around py-1">
+                <i class="bi bi-list-task fs-1 text-light"></i>
+                <h2 class="fw-bold fs-1">8</h2>
+              </div>
+            </div>
+            <div style="margin-top: 28%;">
+                <img  src="\pictures\mt.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+            </div>
+            <div class="text-white">milk tea</div>
+
+            <div style="margin-top: 28%;">
+                <img  src="\pictures\burger.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+            </div>
+            <div class="text-white">burger</div>
+
+          </div>
+
+        </div>
+      </div>
+
+      
+      
+      <div class=" divider bg-dark" style="height: 3rem;"></div>
+
+      </div>
+      <div class="container-fluid px-4 py-2 bg-dark">
+        <div class="row">
+          <button type="button" class="add btn btn-success" id="addorder">Add Order</button>
+        </div>
+      
+      </div>
+
+      <section class="accordion container-fluid bg-dark" id="new">
+        <div class="accordion-item acc-secondary">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#neworder" aria-expanded="true" aria-controls="neworder">
+              <div class="text-white fw-bold">NEW ORDERS</div>
+            </button>
+          </h2>
+          <div id="neworder" class="accordion-collapse collapse show" data-bs-parent="#new">
+            <div class="accordion-body">
+              <table class="table table-striped text-center table-bordered table-responsive-md table-sm table-hover">
+                <thead>
+                  <tr class="text">
+                    <th scope="col">Order number</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Drink</th>
+                    <th scope="col">Food</th>
+                    <th scope="col">Date Ordered</th>
+                    <th scope="col">Target Date</th>
+                    <th scope="col">Special Request</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="align-middle fs-6" scope="row">1010</th>
+                    <td class="align-middle fs-6">Mervin</td>
+                    <td class="align-middle fs-6">coffee</td>
+                    <td class="align-middle fs-6">fries</td>
+                    <td class="align-middle fs-6">2023-10-25</td>
+                    <td class="align-middle fs-6">2023-10-25</td>
+                    <td class="align-middle fs-6">none</td>
+                    <td class="align-middle fs-6"><span class="badge rounded-pill text-bg-secondary">New Order</span></td>
+                    <td class="align-middle text-center">
+                      <button class="btn btn-info vieworder" >view</button>
+                      <button class="btn btn-warning editorder">edit</button>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section> 
+
+      <div class=" divider bg-dark" style="height: 3rem;"></div>    
+           
+      <section class="accordion container-fluid bg-dark" id="processing">
+        <div class="accordion-item acc-warning">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#processingorder" aria-expanded="true" aria-controls="processingorder">
+              <div class="text-dark fw-bold">PROCESSING ORDER</div>
+            </button>
+          </h2>
+          <div id="processingorder" class="accordion-collapse collapse show" data-bs-parent="#processing">
+            <div class="accordion-body">
+              <table class="table table-striped text-center table-bordered table-responsive-md table-sm table-hover">
+                <thead>
+                  <tr class="text">
+                    <th scope="col">Order number</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Drink</th>
+                    <th scope="col">Food</th>
+                    <th scope="col">Date Ordered</th>
+                    <th scope="col">Target Date</th>
+                    <th scope="col">Special Request</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="align-middle" scope="row">1019</th>
+                    <td class="align-middle">Janiel</td>
+                    <td class="align-middle">coke</td>
+                    <td class="align-middle">burger</td>
+                    <td class="align-middle">burger</td>
+                    <td class="align-middle">2023-10-23</td>
+                    <td class="align-middle">less ice</td>
+                    <td class="align-middle"><span class="badge rounded-pill text-bg-warning">Processing</span></td>
+                    <td class="align-middle text-center">
+                      <button class="btn btn-info vieworder">view</button>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>  
+      
+      <div class=" divider bg-dark" style="height: 3rem;"></div>
+   
+
+      <section class="accordion container-fluid bg-dark" id="served">
+        <div class="accordion-item acc-success">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-success" type="button" data-bs-toggle="collapse" data-bs-target="#orderserved" aria-expanded="true" aria-controls="orderserved">
+              <div class="text-light fw-bold">ORDER SERVED</div>
+            </button>
+          </h2>
+          <div id="orderserved" class="accordion-collapse collapse show" data-bs-parent="#served">
+            <div class="accordion-body">
+              <table class="table table-striped text-center table-bordered table-responsive-md table-sm table-hover" id="table-completed">
+                <thead>
+                  <tr class="text">
+                    <th scope="col">Order number</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Drink</th>
+                    <th scope="col">Food</th>
+                    <th scope="col">Date Ordered</th>
+                    <th scope="col">Target Date</th>
+                    <th scope="col">Special Request</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="align-middle" scope="row">1225</th>
+                    <td class="align-middle">Manny</td>
+                    <td class="align-middle">milk tea</td>
+                    <td class="align-middle">nachos</td>
+                    <td class="align-middle">2023-10-06</td>
+                    <td class="align-middle">2023-10-09</td>
+                    <td class="align-middle">none</td>
+                    <td class="align-middle"><span class="badge rounded-pill text-bg-success">completed</span></td>
+                    <td class="align-middle text-center">
+                      <button class="btn btn-info vieworder" >view</button>
+                  </tr>
+                </tbody>
+              </table>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      <div class=" divider bg-dark" style="height: 3rem;"></div>
+
+      <div class="modal fade " id="vieworders" tabindex="-1" aria-labelledby="view" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+
+            <div class="modal-header bg-warning" id="modal-header">
+              <h1 class="modal-title fs-5" id="view">Order # <span class="fw-bold" id="ordernumber"></span></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="container">
+                <form class="requires-validation" novalidate>
+                  <div class="row">
+                    <label for="foods" class="col-form-label col-2 fw-bold text-end">Customer's Name:</label>
+                    <div class="col-4">
+                      <input type="text" class="form-control form-control-sm" name="foods" id="foods" disabled required>
+                      <div class="invalid-feedback">Required.
+                      </div>
+                    
+                    </div>
+                    
+                    <label for="field-status" class="col-form-label col-2 fw-bold text-end">Status:</label>
+                    <div class="col-4">
+                      <input type="text" class="form-control form-control-sm bg-secondary text-white" name="field-status" id="field-status"  disabled required>
+                    </div>
+
+                    <label for="drinks" class="col-form-label col-2 fw-bold text-end">Drinks:</label>
+                    <div class="col-4">
+                      <input type="text" class="form-control form-control-sm" name="drinks" id="drinks"  disabled required>
+                      <div class="invalid-feedback">This field is required.</div>
+                    </div>
+                   
+                  
+
+                   
+                    <label for="store" class="col-form-label col-2 fw-bold text-end">Store:</label>
+                    <div class="col-4">
+                      <input type="text" class="form-control form-control-sm" name="store" id="store"  disabled>
+                    </div>
+                    <!--  -->
+                    
+                   
+                    <label for="addons" class="col-form-label col-2 fw-bold text-end">Foods:</label>
+                    <div class="col-4">
+                      <input type="text" class="form-control form-control-sm" name="addons" id="addons" disabled required>
+                      <div class="invalid-feedback">Required.</div>
+                 
+                     
+                    </div>
+                    <label for="date-ordered" class="col-form-label col-2 fw-bold text-end">Date Ordered:</label>
+                    <div class="col-4">
+                      <input type="date" class="form-control form-control-sm" name="date-ordered" id="date-ordered" disabled >
+                    </div>
+                    <label for="name" class="col-form-label col-2 fw-bold text-end">Add-ons:</label>
+                    <div class="col-4">
+                      <input class="form-control form-control-sm" name="name" id="name" rows="1" disabled required>
+                      <div class="invalid-feedback">Required.
+                      </div>
+                    </div>
+                      <label for="expirationdate" class="col-form-label col-2 fw-bold text-end">Expiration Date:</label>
+                    <div class="col-4">
+                      <input type="date" class="form-control form-control-sm" name="expirationdate" id="expirationdate" value="2023-10-15" disabled required>
+                      <div class="invalid-feedback">field is required.</div>
+                    </div>
+                  </div>
+                </form>  
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">BACK</button>
+              <button type="button" class="btn btn-warning d-none" id="modal-btn-process"  data-bs-dismiss="modal">PROCEED</button>
+              <button type="button" class="btn btn-success d-none" id="modal-btn-complete" data-bs-dismiss="modal">SERVE</button>
+              <button type="button" class="btn btn-success d-none" id="modal-btn-save" data-bs-dismiss="modal">UPDATE ORDER</button>
+              <button type="button" class="btn btn-primary d-none bg-success" id="modal-btn-create">ADD NEW ORDER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div aria-live="polite" aria-atomic="true" class="position-relative">
+      </div>
+      <footer class="bg-dark">
+        <div class="container-fluid py-2">
+          <div class="row justify-content-between">
+            <div class="col text-info fw-bold ps-4"><a href="#">Order System@2023</a></div>
+            <div class="col text-end pe-4"><a href="" class="text-dark text-decoration-none">Developed by: <span class="text-primary">Janiel Paul Repas</span></a></div>
+          </div>
+        </div>
+      </footer>
+    
+  <script src="functionality.js"></script>
+    
+</body>
+</html>
