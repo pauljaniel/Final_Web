@@ -14,6 +14,62 @@ function changeModalHeaderColor(status){
       break;                    
   } 
 }
+
+
+function addorderrecord() {
+  const randomNumber = Math.floor(Math.random() * 10000);
+  const newordernumber = `${randomNumber}`;
+  console.log(newordernumber);
+    let name    = document.getElementById('name');
+    let status      = document.getElementById('field-status');
+    let title       = document.getElementById('foods');
+    let dateCreated = document.getElementById('date-ordered');
+    let targetDate  = document.getElementById('expirationdate');
+    let requestedBy = document.getElementById('drinks');
+    let assignedTo  = document.getElementById('store');
+    let addons  = document.getElementById('addons');
+  
+    const tblRow   = document.querySelector("#new");
+    const tblBody  = tblRow.querySelector('tbody');
+    let newRow = null;
+    newRow     = tblBody.insertRow();
+
+    let col1 = '';
+    let col2 = '';
+    let col3 = '';
+    let col4 = '';
+    let col5 = '';
+    let col6 = '';
+    let col7 = '';
+    let col8 = '';
+    let col9 = '';
+
+    col1 = newRow.insertCell(0);
+    col2 = newRow.insertCell(1);
+    col3 = newRow.insertCell(2);
+    col4 = newRow.insertCell(3);
+    col5 = newRow.insertCell(4);
+    col6 = newRow.insertCell(5);
+    col7 = newRow.insertCell(6);
+    col8 = newRow.insertCell(7);
+    col9 = newRow.insertCell(8);
+  
+    col1.outerHTML = `<th class="align-middle fs-6">${newordernumber}</th>`;
+    col2.outerHTML = `<td class="align-middle fs-6">${title.value}</td>`;
+    col3.outerHTML = `<td class="align-middle fs-6">${requestedBy.value}</td>`;
+    col4.outerHTML = `<td class="align-middle fs-6">${addons.value}</td>`;
+    col5.outerHTML = `<td class="align-middle fs-6">${dateCreated.value}</td>`;
+    col6.outerHTML = `<td class="align-middle fs-6">${targetDate.value}</td>`;
+    col7.outerHTML = `<td class="align-middle fs-6">${name.value}</td>`;
+    col8.outerHTML = `<td class="align-middle"><span class="badge rounded-pill text-bg-secondary">New Order</span></td>`;
+    col9.outerHTML = `<td class="align-middle text-center">
+                        <button class="btn btn-info vieworder" >view</button>
+                        <button class="btn btn-warning editorder" >Edit</button>
+                      </td>`;
+    
+  }
+  
+
 function breakByHTMLChars(statusHtml = ""){
   const tagRegex = /<[^>]*>/g;
   const resultArray = statusHtml.split(tagRegex);
@@ -173,49 +229,6 @@ function clearFieldValues() {
 }
 
 
-function addorderrecord() {
-const randomNumber = Math.floor(Math.random() * 10000);
-const newordernumber = `${randomNumber}`;
-console.log(newordernumber);
-  let name    = document.getElementById('name');
-  let status      = document.getElementById('field-status');
-  let title       = document.getElementById('foods');
-  let dateCreated = document.getElementById('date-ordered');
-  let targetDate  = document.getElementById('expirationdate');
-  let requestedBy = document.getElementById('drinks');
-  let assignedTo  = document.getElementById('store');
-  let addons  = document.getElementById('addons');
-
-  const tblRow   = document.querySelector("#new");
-  const tblBody  = tblRow.querySelector('tbody');
-  
-  let newRow     = tblBody.insertRow();
-
-  let col1 = newRow.insertCell(0);
-  let col2 = newRow.insertCell(1);
-  let col3 = newRow.insertCell(2);
-  let col4 = newRow.insertCell(3);
-  let col5 = newRow.insertCell(4);
-  let col6 = newRow.insertCell(5);
-  let col7 = newRow.insertCell(6);
-  let col8 = newRow.insertCell(7);
-  let col9 = newRow.insertCell(8);
-
-  col1.outerHTML = `<th class="align-middle fs-6">${newordernumber}</th>`;
-  col2.outerHTML = `<td class="align-middle fs-6">${title.value}</td>`;
-  col3.outerHTML = `<td class="align-middle fs-6">${requestedBy.value}</td>`;
-  col4.outerHTML = `<td class="align-middle fs-6">${addons.value}</td>`;
-  col5.outerHTML = `<td class="align-middle fs-6">${dateCreated.value}</td>`;
-  col6.outerHTML = `<td class="align-middle fs-6">${targetDate.value}</td>`;
-  col7.outerHTML = `<td class="align-middle fs-6">${name.value}</td>`;
-  col8.outerHTML = `<td class="align-middle"><span class="badge rounded-pill text-bg-secondary">New Order</span></td>`;
-  col9.outerHTML = `<td class="align-middle text-center">
-                      <button class="btn btn-info vieworder" >view</button>
-                      <button class="btn btn-warning editorder" >Edit</button>
-                    </td>`;
-  
-}
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -286,36 +299,40 @@ document.addEventListener('DOMContentLoaded', function() {
   addButton.addEventListener('click', function(){
     let modalView = document.querySelector("#vieworders");
     const createButton = modalView.querySelector("#modal-btn-create");
-    let myModal = new bootstrap.Modal(modalView);
+    myModal = new bootstrap.Modal(modalView);
+    console.log(myModal);
     myModal.show();
 
     const inputFields = document.querySelectorAll(".form-control");
     inputFields.forEach(input => {
       if(input.id != "orderserved") input.removeAttribute("disabled");
+    
     });
 
     clearFieldValues();
 
-    createButton.addEventListener('click', function(event){
-      const forms = document.querySelectorAll('.requires-validation');
-      Array.from(forms).forEach(function (form) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-        } else {
-          addorderrecord();
-          myModal.hide();
-        }
-        form.classList.add('was-validated');
-      })
-    });
+    
+
 
 
   });
 
-
-
+  const createButton = document.querySelector("#modal-btn-create");
+  createButton.addEventListener('click', function(event){
+    const forms = document.querySelectorAll('.requires-validation');
+    
+    Array.from(forms).forEach(function (form) {
+      if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          
+      } else {
+        addorderrecord();
+        myModal.hide();
+      }
+      form.classList.add('was-validated');
+    })
+  });
 
 
   modalMain.addEventListener("hidden.bs.modal", function(){
@@ -426,3 +443,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
   });
 });
+
+
+// const createButto = document.querySelector ("#addorder");
+// createButto.addEventListener('click', function(){
+//   addButtonListener()
+  
+// });
+
+function generateToast(text) {
+  
+}

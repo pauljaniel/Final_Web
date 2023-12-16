@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- CUSTOM STYLESHEET -->
     <link rel="stylesheet" href="design.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
@@ -20,25 +18,23 @@
       <div class="container-fluid py-5 bg-dark text-center">
         <div class="display-3 mb-4 py-3 text-light"><h1>ORDER DESCRIPTION</h1></div>
         
-        <!-- STATUS CARDS -->
         <div class="row g-3 bg-dark">
-          <!-- COMPLETE CARD -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card bg-success text-light text-center">
               <div class="card-header fs-4">Orders</div>
               <div class="d-flex align-items-center justify-content-around py-1">
                 <i class="bi bi-check-square fs-1 text-light"></i>
-                <h2 class="fw-bold fs-1">3</h2>
+                <h2 class="fw-bold fs-1">1</h2>
               </div>
               
             </div>
            
             <div style="margin-top: 28%;">
-            <img src="\pictures\coffee.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+            <img src="/pictures/coffee.jpg"  style="width: 300px; height: 200px;"  alt="Description">
         </div>
         <div class="text-white">coffee</div>
         <div style="margin-top: 28%;">
-            <img src="\pictures\nachos.jpg"  style="width: 300px; height: 200px;"  alt="Description">
+            <img src="/pictures/nachos.jpg"  style="width: 300px; height: 200px;"  alt="Description">
            
         </div>
 
@@ -47,13 +43,12 @@
        
           </div>
 
-          <!-- ON PROCESS CARD -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card text-center text-light bg-warning">
               <div class="card-header fs-4">Preparing</div>
               <div class="d-flex align-items-center justify-content-around py-1 border border-1 border-warning">
                 <i class="bi bi-pencil-square fs-1 text-light"></i>
-                <h2 class="fw-bold fs-1">5</h2>
+                <h2 class="fw-bold fs-1">1</h2>
               </div>
               
             </div>
@@ -73,13 +68,12 @@
             <div class="text-white">fries</div>
           </div>
 
-          <!-- ON QUEUE CARD -->
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card bg-secondary text-light text-center">
               <div class="card-header fs-4">Served</div>
               <div class="d-flex align-items-center justify-content-around py-1">
                 <i class="bi bi-list-task fs-1 text-light"></i>
-                <h2 class="fw-bold fs-1">8</h2>
+                <h2 class="fw-bold fs-1">1</h2>
               </div>
             </div>
             <div style="margin-top: 28%;">
@@ -126,8 +120,8 @@
                     <th scope="col">Drink</th>
                     <th scope="col">Food</th>
                     <th scope="col">Date Ordered</th>
-                    <th scope="col">Target Date</th>
-                    <th scope="col">Special Request</th>
+                    <th scope="col">Expiration Date</th>
+                    <th scope="col">Note</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -172,8 +166,8 @@
                     <th scope="col">Drink</th>
                     <th scope="col">Food</th>
                     <th scope="col">Date Ordered</th>
-                    <th scope="col">Target Date</th>
-                    <th scope="col">Special Request</th>
+                    <th scope="col">Expiration Date</th>
+                    <th scope="col">Note</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -218,8 +212,8 @@
                     <th scope="col">Drink</th>
                     <th scope="col">Food</th>
                     <th scope="col">Date Ordered</th>
-                    <th scope="col">Target Date</th>
-                    <th scope="col">Special Request</th>
+                    <th scope="col">Expiration Date</th>
+                    <th scope="col">Note</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -277,7 +271,7 @@
                     <label for="drinks" class="col-form-label col-2 fw-bold text-end">Drinks:</label>
                     <div class="col-4">
                       <input type="text" class="form-control form-control-sm" name="drinks" id="drinks"  disabled required>
-                      <div class="invalid-feedback">This field is required.</div>
+                      <div class="invalid-feedback">Required.</div>
                     </div>
                    
                   
@@ -287,21 +281,16 @@
                     <div class="col-4">
                       <input type="text" class="form-control form-control-sm" name="store" id="store"  disabled>
                     </div>
-                    <!--  -->
-                    
-                   
                     <label for="addons" class="col-form-label col-2 fw-bold text-end">Foods:</label>
                     <div class="col-4">
                       <input type="text" class="form-control form-control-sm" name="addons" id="addons" disabled required>
                       <div class="invalid-feedback">Required.</div>
-                 
-                     
                     </div>
                     <label for="date-ordered" class="col-form-label col-2 fw-bold text-end">Date Ordered:</label>
                     <div class="col-4">
                       <input type="date" class="form-control form-control-sm" name="date-ordered" id="date-ordered" disabled >
                     </div>
-                    <label for="name" class="col-form-label col-2 fw-bold text-end">Add-ons:</label>
+                    <label for="name" class="col-form-label col-2 fw-bold text-end">Note:</label>
                     <div class="col-4">
                       <input class="form-control form-control-sm" name="name" id="name" rows="1" disabled required>
                       <div class="invalid-feedback">Required.
