@@ -23,9 +23,9 @@ function addorderrecord() {
     let name    = document.getElementById('name');
     let status      = document.getElementById('field-status');
     let title       = document.getElementById('foods');
-    let dateCreated = document.getElementById('date-ordered');
-    let targetDate  = document.getElementById('expirationdate');
-    let requestedBy = document.getElementById('drinks');
+    let dateorder = document.getElementById('date-ordered');
+    let exipred  = document.getElementById('expirationdate');
+    let drink = document.getElementById('drinks');
     let assignedTo  = document.getElementById('store');
     let addons  = document.getElementById('addons');
   
@@ -56,10 +56,10 @@ function addorderrecord() {
   
     col1.outerHTML = `<th class="align-middle fs-6">${newordernumber}</th>`;
     col2.outerHTML = `<td class="align-middle fs-6">${title.value}</td>`;
-    col3.outerHTML = `<td class="align-middle fs-6">${requestedBy.value}</td>`;
+    col3.outerHTML = `<td class="align-middle fs-6">${drink.value}</td>`;
     col4.outerHTML = `<td class="align-middle fs-6">${addons.value}</td>`;
-    col5.outerHTML = `<td class="align-middle fs-6">${dateCreated.value}</td>`;
-    col6.outerHTML = `<td class="align-middle fs-6">${targetDate.value}</td>`;
+    col5.outerHTML = `<td class="align-middle fs-6">${dateorder.value}</td>`;
+    col6.outerHTML = `<td class="align-middle fs-6">${exipred.value}</td>`;
     col7.outerHTML = `<td class="align-middle fs-6">${name.value}</td>`;
     col8.outerHTML = `<td class="align-middle"><span class="badge rounded-pill text-bg-secondary">New Order</span></td>`;
     col9.outerHTML = `<td class="align-middle text-center">
@@ -164,9 +164,9 @@ function assignRowFieldValues(row) {
     let name    = document.getElementById('name');
     let status      = document.getElementById('field-status');
     let title       = document.getElementById('foods');
-    let dateCreated = document.getElementById('date-ordered');
-    let targetDate  = document.getElementById('expirationdate');
-    let requestedBy = document.getElementById('drinks');
+    let dateorder = document.getElementById('date-ordered');
+    let exipred  = document.getElementById('expirationdate');
+    let drink = document.getElementById('drinks');
     let assignedTo  = document.getElementById('store');
     let addons  = document.getElementById('addons');
     const statusArray = ['Processing','New Order','completed','overdue'];
@@ -181,9 +181,9 @@ function assignRowFieldValues(row) {
     name.value    = columns[5].textContent;
     status.value      = textContentArray.join("/");
     title.value       = columns[0].textContent;
-    dateCreated.value = columns[3].textContent;
-    targetDate.value  = columns[4].textContent;
-    requestedBy.value = columns[1].textContent;
+    dateorder.value = columns[3].textContent;
+    exipred.value  = columns[4].textContent;
+    drink.value = columns[1].textContent;
     assignedTo.value  = 'addons';
     addons.value  = columns[2].textContent;
 }
@@ -193,9 +193,9 @@ function clearFieldValues() {
   let name    = document.getElementById('name');
   let status      = document.getElementById('field-status');
   let title       = document.getElementById('foods');
-  let dateCreated = document.getElementById('date-ordered');
-  let targetDate  = document.getElementById('expirationdate');
-  let requestedBy = document.getElementById('drinks');
+  let dateorder = document.getElementById('date-ordered');
+  let exipred  = document.getElementById('expirationdate');
+  let drink = document.getElementById('drinks');
   let assignedTo  = document.getElementById('store');
   let addons  = document.getElementById('addons');
   const statusArray = ['Processing','New Order','completed','overdue'];
@@ -209,13 +209,13 @@ function clearFieldValues() {
   name.value    = '';
   status.value      = 'New Order';
   title.value       = '';
-  dateCreated.value = new Date().toISOString().split('T')[0];
-  targetDate.value  = newDateTarget;
-  requestedBy.value = '';
+  dateorder.value = new Date().toISOString().split('T')[0];
+  exipred.value  = newDateTarget;
+  drink.value = '';
   assignedTo.value  = "Janiel's Cafe";
   addons.value  = '';
   status.setAttribute("disabled","");
-  dateCreated.setAttribute("disabled","");
+  dateorder.setAttribute("disabled","");
   assignedTo.setAttribute("disabled","");
 
   removeBtns = modalMain.querySelectorAll("#modal-btn-process,#modal-btn-complete,#modal-btn-save");
@@ -428,17 +428,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let name    = document.getElementById('name');
     let status      = document.getElementById('field-status');
     let title       = document.getElementById('foods');
-    let dateCreated = document.getElementById('date-ordered');
-    let targetDate  = document.getElementById('expirationdate');
-    let requestedBy = document.getElementById('drinks');
+    let dateorder = document.getElementById('date-ordered');
+    let exipred  = document.getElementById('expirationdate');
+    let drink = document.getElementById('drinks');
     let assignedTo  = document.getElementById('store');
     let addons  = document.getElementById('addons');
     
     columns[5].textContent = name.value;
     columns[0].textContent = title.value       
-    columns[3].textContent = dateCreated.value 
-    columns[4].textContent = targetDate.value  
-    columns[1].textContent = requestedBy.value 
+    columns[3].textContent = dateorder.value 
+    columns[4].textContent = exipred.value  
+    columns[1].textContent = drink.value 
     columns[2].textContent = addons.value  
     
   });
